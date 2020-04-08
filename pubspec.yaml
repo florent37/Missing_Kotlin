@@ -1,8 +1,8 @@
 name: missing_kotlin
 description: Missing Kotlin methods ? let / run / also / takeIf / when / if ? try this awesome repository
 version: 0.0.1
-author:
-homepage:
+author: Florent Champigny <champigny.florent@gmail.com>
+homepage: https://github.com/florent37/Missing-Kotlin
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
