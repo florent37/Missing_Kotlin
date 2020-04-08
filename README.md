@@ -74,18 +74,19 @@ expect(calculated, null);
 Like a Kotlin if, returning a value, but with an Uppercase (because if is a reserved word)
 
 ```dart
-final result = If(1 == 1, 
+final result = If(1 == 2, 
   () => "A", 
   Else: () => "B"
 );
 
 //here the result is "B"
-expect(result, "B");
+expect(result, "1");
 ```
 
 You can also chain statements
 
 ```dart
+final variable2 = 1;
 final result = If(variable2 == 2,
     () => "A",
   Else: () => 
