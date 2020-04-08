@@ -22,18 +22,18 @@ typedef R WhenBlock<R>();
 @Nullable()
 R when<T, R>(T value, List<WhenStatement<T, R>> statements) {
   Default<T, R> defaultStatement;
-  for(var statement in statements){
-    if(statement is Default){
-      if(defaultStatement != null){
+  for (var statement in statements) {
+    if (statement is Default) {
+      if (defaultStatement != null) {
         print("already has a default statement");
       }
       defaultStatement = statement;
-    } else if(statement.satisfy(value)){
+    } else if (statement.satisfy(value)) {
       return statement.invoke();
     }
   }
   //if here, no return happened, call the de defaultStatement if found
-  if(defaultStatement != null){
+  if (defaultStatement != null) {
     return defaultStatement.invoke();
   }
 
@@ -44,7 +44,7 @@ abstract class WhenStatement<T, R> {
   final WhenBlock block;
   const WhenStatement(this.block);
   bool satisfy(T value);
-  R invoke(){
+  R invoke() {
     return block();
   }
 }
@@ -58,9 +58,7 @@ class Case<T, R> extends WhenStatement<T, R> {
   bool satisfy(T value) {
     return this.value == value;
   }
-
 }
-
 
 class Is<T, R> extends WhenStatement<T, R> {
   final Type type;
@@ -71,16 +69,13 @@ class Is<T, R> extends WhenStatement<T, R> {
   bool satisfy(T value) {
     return value.runtimeType == type;
   }
-
 }
 
 class Default<T, R> extends WhenStatement<T, R> {
-
   const Default(WhenBlock<R> block) : super(block);
 
   @override
   bool satisfy(T value) {
     return true;
   }
-
 }

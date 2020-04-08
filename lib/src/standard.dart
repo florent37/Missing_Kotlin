@@ -65,7 +65,7 @@ extension Standard<T> on T {
 }
 
 void repeat(int times, void Function(int) predicate) {
-  for(var i = 0;i<times;++i){
+  for (var i = 0; i < times; ++i) {
     predicate(i);
   }
 }

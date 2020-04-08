@@ -48,8 +48,8 @@
 /// 			else: () => value2,
 /// 	);
 /// });
-R If<R>(bool expression, R Function() success, {R Function() Else}){
-  if(expression){
+R If<R>(bool expression, R Function() success, {R Function() Else}) {
+  if (expression) {
     return success();
   } else {
     return Else();

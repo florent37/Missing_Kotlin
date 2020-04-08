@@ -71,7 +71,7 @@ expect(calculated, null);
 
 ## If
 
-Like a Kotlin if, returning a value, but with an Uppercase (because if is a reserved work)
+Like a Kotlin if, returning a value, but with an Uppercase (because if is a reserved word)
 
 ```dart
 final result = If(1 == 1, 
