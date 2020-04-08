@@ -37,14 +37,22 @@ final result = myMethod()?.also((v){
 
 ## .run
 
-## .also
-
 Work like `.run` in kotlin
 
 ```dart
 final calculated = myMethod()?.let((v){
   return v*2;
 }) ?? run(() => 3);
+```
+
+## .takeIf
+
+Work like `.takeIf` in kotlin
+
+```dart
+final calculated = myMethod()?.takeIf((v) => v == 3)?.let((v){
+  return v*2;
+}) ?? 0;
 ```
 
 ## When
